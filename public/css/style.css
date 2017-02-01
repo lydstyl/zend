@@ -1,0 +1,19 @@
+@font-face {font-family: "Bariol";src: url('../fonts/Bariol_Regular.otf');}
+@font-face {font-family: "Bariol_Italic";font-weight: italic;src: url('../fonts/Bariol_Regular_Italic.otf');}
+.clear{clear:both}
+body{font-family: arial}
+/*#page{width: 1000px;margin: auto;}*/
+.wrapper{max-width:1000px;margin:auto;}
+header{background-color: #F56262}
+header .wrapper{height: 111px;position:relative;background-color: #f56262}
+header .left{float:left; margin-top: 25px;}
+header h1{line-height: 20px;margin: 0;color:white;font-size: 16px}
+header h1 span{font-family:Myriad Pro;font-size:35px;color:white;margin-left: 8px;}
+header h1 span:last-child{font-family:Bariol;font-size:17px;margin: 0;}
+header .left img{position:static}
+header .right{float:right}
+header img{position:absolute;top:0;right:0}
+header ul{margin:36px 0 0 0}
+header li {display:inline-block;margin: 0 22px 0 0;padding: 8px 12px;list-style-type: none;color:white;text-decoration: none;font-size: 16px;border-radius:2px}
+header li a{;color:white;text-decoration: none;font-family:arial;font-weight:bold}
+header li:hover {background-color:black}
