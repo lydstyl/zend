@@ -24,6 +24,16 @@ return [
                     ],
                 ],
             ],
+            'about' => [//changement
+                'type' => Literal::class, //une histoire de paramètre ou pas --> segment pour les paramètres pas totalement vrai
+                'options' => [
+                    'route'    => '/about-me',//changement url
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action'     => 'aboutme', //changement
+                    ],
+                ],
+            ],
             'application' => [
                 'type'    => Segment::class,
                 'options' => [
