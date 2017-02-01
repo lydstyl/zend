@@ -20,4 +20,20 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+    public function teamAction() //modif
+    {
+        return new ViewModel();
+    }
+    public function portfolioAction() //modif
+    {
+        return new ViewModel();
+    }
+    public function otherAction() //modif
+    {
+        return new ViewModel();
+    }
+    public function contactAction() //modif
+    {
+        return new ViewModel();
+    }
 }

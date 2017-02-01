@@ -2,7 +2,7 @@
 /*@font-face {font-family: "Bariol_Italic";font-weight: italic;src: url('../fonts/Bariol_Regular_Italic.otf');}*/
 *{box-sizing: border-box}
 .clear{clear:both}
-body{font-family: Bariol;background-color: #eb4f4e}
+body{margin: 0;font-family: Bariol;background-color: #eb4f4e}
 /*#page{width: 1000px;margin: auto;}*/
 .wrapper{max-width:1000px;margin:auto;}
 header{background-color: #F56262}

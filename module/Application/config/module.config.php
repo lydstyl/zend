@@ -34,6 +34,46 @@ return [
                     ],
                 ],
             ],
+            'team' => [//changement
+                'type' => Literal::class, //une histoire de paramètre ou pas --> segment pour les paramètres pas totalement vrai
+                'options' => [
+                    'route'    => '/team',//changement url
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action'     => 'team', //changement
+                    ],
+                ],
+            ],
+            'portfolio' => [//changement
+                'type' => Literal::class, //une histoire de paramètre ou pas --> segment pour les paramètres pas totalement vrai
+                'options' => [
+                    'route'    => '/portfolio',//changement url
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action'     => 'portfolio', //changement
+                    ],
+                ],
+            ],
+            'other' => [//changement
+                'type' => Literal::class, //une histoire de paramètre ou pas --> segment pour les paramètres pas totalement vrai
+                'options' => [
+                    'route'    => '/other',//changement url
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action'     => 'other', //changement
+                    ],
+                ],
+            ],
+            'contact' => [//changement
+                'type' => Literal::class, //une histoire de paramètre ou pas --> segment pour les paramètres pas totalement vrai
+                'options' => [
+                    'route'    => '/contact',//changement url
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action'     => 'contact', //changement
+                    ],
+                ],
+            ],
             'application' => [
                 'type'    => Segment::class,
                 'options' => [
