@@ -23,8 +23,8 @@ header li:hover {background-color:black}
 .slider h2{margin: 10px;font-size: 60px;text-align: center;color: white}
 .slider p{margin: 0 0 30px 0;font-size: 20px;text-align: center;color: white}
 .lydSlider{position:relative}
-.lydSlider>img:first-child{position:absolute;left:-50px;top:calc(50% - 35px);}
-.lydSlider>img:last-child{position:absolute;right:-50px;top:calc(50% - 35px);}
+.lydSlider>img:first-child{position:absolute;left:-155px;top:calc(50% - 35px);}
+.lydSlider>img:last-child{position:absolute;right:-155px;top:calc(50% - 35px);}
 .lydSlider .container{position: relative;width: 1000px;height: 444px;font-size: 0;overflow: hidden}
 .lydSlider .container .bar{position: absolute;width: 3000px;left: 0}
 .lydSlider .container .imgBox{width: 1000px;height: 444px;display:inline-block;}
