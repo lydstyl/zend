@@ -6,19 +6,10 @@ $(function(){
             this.barClass = '.' + options.barClass; // can be .bar
             this.imgBoxClass = '.' + options.imgBoxClass;
             $(this.containerClass + ' ' + this.barClass).css('left','-1000px');
-            
-            var $thisLydSlider = this; // on enregistre this dans une variable pour qu'elle ne se fasse pas écraser dans les fonctions qui suivent
-
             this.addFunctionMoveToRightArrow();
             this.addFunctionStopToRightArrow();
-
-            $(this.containerClass + ' [alt="right"]').click(function() {
-                $($thisLydSlider.containerClass + ' [alt="right"]').trigger('move', 'right').trigger('stop');
-            }); 
-            $(this.containerClass + ' [alt="left"]').click(function() {
-                var left = $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).css('left');
-                $($thisLydSlider.containerClass + ' [alt="right"]').trigger('move', 'left').trigger('stop');
-            }); 
+            this.addClickListenerToLeftArrow();
+            this.addClickListenerToRightArrow();
         },
         addFunctionStopToRightArrow : function() {
             var $thisLydSlider = this; // on enregistre this dans une variable pour qu'elle ne se fasse pas écraser dans les fonctions qui suivent
@@ -49,10 +40,17 @@ $(function(){
             });
         },
         addClickListenerToLeftArrow: function(){
-            
+            var $thisLydSlider = this;
+            $(this.containerClass + ' [alt="left"]').click(function() {
+                var left = $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).css('left');
+                $($thisLydSlider.containerClass + ' [alt="right"]').trigger('move', 'left').trigger('stop');
+            });   
         },
         addClickListenerToRightArrow: function(){
-
+            var $thisLydSlider = this;
+            $(this.containerClass + ' [alt="right"]').click(function() {
+                $($thisLydSlider.containerClass + ' [alt="right"]').trigger('move', 'right').trigger('stop');
+            }); 
         }
     };
     var slider1 = Object.create(LydSlider);

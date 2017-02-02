@@ -1,0 +1,5 @@
+adaptateur
+	info connexion
+	type de connexion
+
+Sql(adapateur)
