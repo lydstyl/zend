@@ -1,19 +1,58 @@
 <div class="slider">
     <div class="wrapper">
-        <!--<h2>Welcome to Motion</h2>-->
-        <!--<h2><?php echo $someVariableName; ?></h2>-->
-        <h2><?= $someVariableName.$someVariableName2.$someVariableName3; ?></h2>
+        <h2>Welcome to Motion</h2>
         <p>Asmart & Creative Single Page Template</p>
         <div class="lydSlider">
             <img src="../img/slider-left.png" alt="left">
             <div class="container">
                 <div class="bar">            
-                    <div class="imgBox box1"><img src="../img/slider1.jpg" alt="1"></div>
-                    <div class="imgBox box2"><img src="../img/slider2.jpg" alt="2"></div>
-                    <div class="imgBox box3"><img src="../img/slider3.jpg" alt="3"></div>
+                    <?php foreach ($url as $src) 
+                        echo "<div class='imgBox'><img src='".$src."' alt='slider_img'></div>"; 
+                    ?>
                 </div>            
             </div>
             <img src="../img/slider-right.png" alt="right">
+        </div>
+    </div>
+</div>
+<div class="pinkBar"></div>
+<div class="smart">
+    <div class="wrapper">
+        <div class="row">
+            <h3>Smart & Creative</h3>
+            <p>This is why you will use it :)</p>
+
+            <?php 
+                foreach ($smart as $sm){
+            ?>
+                    <div class="col-sm-4">
+                        <div class="imgBox"><img src="<?= $sm['src'] ?>" alt="img"></div>
+                        <h4><?= $sm['name'] ?></h4>
+                        <p><?= $sm['text'] ?> </p>                                           
+                    </div>
+            <?php
+                } 
+            ?>
+        </div>
+    </div>
+</div>
+<div class="talented">
+    <div class="wrapper">
+        <div class="row">
+            <h3>Talented & Experts</h3>
+            <p>This is our team :)</p>
+            <?php 
+            foreach ($talented as $tal){
+            ?>
+                <div class="col-sm-3">
+                    <imgBox><img src="<?= $tal['src'] ?>" alt="img"></imgBox>
+                    <h4><span><?= $tal['first_name'] ?></span><span><?= $tal['last_name'] ?></span></h4>
+                    <p><?= $tal['work'] ?></p>
+                    <div class="follow">Follow</div>
+                </div
+            <?php
+                } 
+            ?>
         </div>
     </div>
 </div>

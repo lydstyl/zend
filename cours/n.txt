@@ -1,5 +1,17 @@
-adaptateur
-	info connexion
-	type de connexion
+dans application
+	modifications de module.config.php
+	IndexController.php
 
-Sql(adapateur)
+
+dans vendor
+	adaptateur
+		info connexion
+		type de connexion
+
+	Sql(adapateur)
+
+
+
+hauteur du slider
+img right left
+ecartement right left

@@ -17,14 +17,14 @@
 
             // ->prependStylesheet($this->basePath('css/foundation.css'))
 
-            // ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
-            // ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
         ?>
 
         <!-- Scripts -->
         <?= $this->headScript()
             ->prependFile($this->basePath('js/script.js'))
-            // ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
             // ->prependFile($this->basePath('//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'))
             ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
         ?>

@@ -14,46 +14,63 @@ use Zend\View\Model\ViewModel;
 use Zend\Db\Adapter\Adapter;
 use Zend\Db\Sql\Sql;
 
-
 class IndexController extends AbstractActionController
 {
-    // public function indexAction()
-    // {
-    //     return new ViewModel();
-    // }
     public function indexAction()
     {
-        $adaptater = new Adaptater(array(
+        // SETTING ADAPTER
+        $adaptater = new Adapter(array(
             'driver' => 'Mysqli',
-            'database' => 'cms',
+            'database' => 'motion', //nom de la bdd
             'username' => 'root',
             'password' => ''
         ));
-        // $sql = new sql(array(
-        //     'driver' => 'Mysqli',
-        //     'database' => 'cms',
-        //     'username' => 'root',
-        //     'password' => ''
-        // ));
+        
+        // SLIDER QUERY
+        $results = $adaptater->query('SELECT * FROM slider_img WHERE `slider_id`=1 LIMIT 3', $adaptater::QUERY_MODE_EXECUTE); // requete sql envoyée
+        $data = [];
+        foreach($results as $row){
+            $data[] = utf8_encode($row['src']); //nom de la colonne 
+        }
 
+        // SMART BOX QUERY
+        $results = $adaptater->query('SELECT * FROM smart_box LIMIT 3', $adaptater::QUERY_MODE_EXECUTE);
+        $smart = [];
+        foreach($results as $row){
+            //echo utf8_encode($row['text']);
+            $smart[] = array(
+                'src' => utf8_encode($row['src']), //nom de la colonne 
+                'name' => utf8_encode($row['name']),
+                'text' => utf8_encode($row['text']),
+            ); 
+        }
 
+        // TALENTED BOX QUERY
+        $results = $adaptater->query('SELECT * FROM talented LIMIT 4', $adaptater::QUERY_MODE_EXECUTE);
+        $talented = [];
+        foreach($results as $row){
+            //echo utf8_encode($row['text']);
+            $talented[] = array(
+                'src' => utf8_encode($row['src']), //nom de la colonne 
+                'first_name' => utf8_encode($row['first_name']),
+                'last_name' => utf8_encode($row['last_name']),
+                'work' => utf8_encode($row['work']),
+            ); 
+        }
+
+        // SENDING TO VIEW
         $viewModel = new ViewModel();
         $viewModel->setVariables(array(
-            'someVariableName' => 'bla',
-            'someVariableName2' => 'coco',
+            'url' => $data, // nom du tableau dans le tpl
+            'smart' => $smart,
+            'talented' => $talented,
         ));
-        $viewModel->setVariables(array(
-            'someVariableName3' => 'crotte',
-        ));
-
         return $viewModel;
     }
 
-
-
-
     public function aboutmeAction() //modif
     {
+        //echo "aaaaaboouutt";
         return new ViewModel();
     }
     public function teamAction() //modif
