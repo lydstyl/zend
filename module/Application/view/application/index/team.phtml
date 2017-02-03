@@ -1,15 +1,12 @@
 <div>team</div>         
-
-
 <?php 
     foreach ($talented as $tal){
 ?>
     <div class="col-sm-3">
         <imgBox><img src="<?= $tal['src'] ?>" alt="img"></imgBox>
-        <h4><span><?= $tal['first_name'] ?></span><span><?= $tal['last_name'] ?></span></h4>
+        <h4><span><?= $tal['first_name'] ?> </span><span><?= $tal['last_name'] ?></span></h4>
         <p><?= $tal['work'] ?></p>
-        <div class="follow">Follow</div>
-        <a href="./team/<?= $tal['first_name'] ?>">lien</a>
+        <a href="./team/<?= $tal['first_name'] ?>">Lien vers ma fiche toute seule</a>
     </div>
 <?php
     } 

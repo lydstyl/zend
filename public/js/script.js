@@ -1,8 +1,4 @@
 $(function(){
-    // hauteur du slider
-    // img right left
-    // ecartement right left
-
     // var LydSlider = {
     //     toBelaunched: true, 
     //     initSlider: function(options){
@@ -29,14 +25,15 @@ $(function(){
     //                     $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).animate({'left': '-2000px'},1500, function(){
     //                         $thisLydSlider.toBelaunched = true;
     //                         var left = $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).css('left');
-    //                         if(left == '-2000px')$($thisLydSlider.imgBoxClass + ':last-child').after($($thisLydSlider.imgBoxClass + ':first-child'));
+    //                         //console.log($thisLydSlider.containerClass + ' ' + $thisLydSlider.imgBoxClass);
+    //                         if(left == '-2000px')$($thisLydSlider.containerClass + ' ' + $thisLydSlider.imgBoxClass + ':last-child').after($($thisLydSlider.containerClass + ' ' + $thisLydSlider.imgBoxClass + ':first-child'));
     //                         $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).css('left','-1000px');
     //                     });
     //                 }else{
     //                     $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).animate({'left': '0px'},1500, function(){
     //                         $thisLydSlider.toBelaunched = true;
     //                         var left = $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).css('left');
-    //                         if(left == '0px')$($thisLydSlider.imgBoxClass + ':first-child').before($($thisLydSlider.imgBoxClass + ':last-child'));
+    //                         if(left == '0px')$($thisLydSlider.containerClass + ' ' + $thisLydSlider.imgBoxClass + ':first-child').before($($thisLydSlider.containerClass + ' ' + $thisLydSlider.imgBoxClass + ':last-child'));
     //                         $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).css('left','-1000px');
     //                     });
     //                 }
@@ -57,7 +54,6 @@ $(function(){
     //         }); 
     //     }
     // };
-
     var LydSlider = {
         toBelaunched: true, 
         initSlider: function(options){
@@ -84,14 +80,15 @@ $(function(){
                         $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).animate({'left': '-2000px'},1500, function(){
                             $thisLydSlider.toBelaunched = true;
                             var left = $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).css('left');
-                            if(left == '-2000px')$($thisLydSlider.imgBoxClass + ':last-child').after($($thisLydSlider.imgBoxClass + ':first-child'));
+                            //console.log($thisLydSlider.containerClass + ' ' + $thisLydSlider.imgBoxClass);
+                            if(left == '-2000px')$($thisLydSlider.containerClass + ' ' + $thisLydSlider.imgBoxClass + ':last-child').after($($thisLydSlider.containerClass + ' ' + $thisLydSlider.imgBoxClass + ':first-child'));
                             $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).css('left','-1000px');
                         });
                     }else{
                         $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).animate({'left': '0px'},1500, function(){
                             $thisLydSlider.toBelaunched = true;
                             var left = $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).css('left');
-                            if(left == '0px')$($thisLydSlider.imgBoxClass + ':first-child').before($($thisLydSlider.imgBoxClass + ':last-child'));
+                            if(left == '0px')$($thisLydSlider.containerClass + ' ' + $thisLydSlider.imgBoxClass + ':first-child').before($($thisLydSlider.containerClass + ' ' + $thisLydSlider.imgBoxClass + ':last-child'));
                             $($thisLydSlider.containerClass + ' ' + $thisLydSlider.barClass).css('left','-1000px');
                         });
                     }
