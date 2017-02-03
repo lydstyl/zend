@@ -75,7 +75,48 @@ class IndexController extends AbstractActionController
     }
     public function teamAction() //modif
     {
-        return new ViewModel();
+        // SETTING ADAPTER
+        $adaptater = new Adapter(array(
+            'driver' => 'Mysqli',
+            'database' => 'motion', //nom de la bdd
+            'username' => 'root',
+            'password' => ''
+        ));
+
+        // TALENTED BOX QUERY
+        $first_name = $this->params()->fromRoute('name');
+        //echo $first_name;
+
+        if($first_name == 'all'){
+            $results = $adaptater->query('SELECT * FROM talented', $adaptater::QUERY_MODE_EXECUTE);
+        }else{
+            $sqlRequest = 'SELECT * FROM talented WHERE `first_name`="'.$first_name.'"';
+            //echo $sqlRequest;
+            $results = $adaptater->query($sqlRequest, $adaptater::QUERY_MODE_EXECUTE);
+        }
+
+        $talented = [];
+        foreach($results as $row){
+            //echo utf8_encode($row['text']);
+            $talented[] = array(
+                'src' => utf8_encode($row['src']), //nom de la colonne 
+                'first_name' => utf8_encode($row['first_name']),
+                'last_name' => utf8_encode($row['last_name']),
+                'work' => utf8_encode($row['work']),
+            ); 
+        }
+
+        // SENDING TO VIEW
+        $viewModel = new ViewModel();
+        $viewModel->setVariables(array(
+            //'url' => $data, // nom du tableau dans le tpl
+            //'smart' => $smart,
+            'talented' => $talented,
+        ));
+
+        //echo $this->params()->fromRoute('name');
+        return $viewModel;
+        //return new ViewModel();
     }
     public function portfolioAction() //modif
     {
@@ -87,6 +128,11 @@ class IndexController extends AbstractActionController
     }
     public function contactAction() //modif
     {
+        return new ViewModel();
+    }
+    public function albumAction() //modif
+    {
+        echo $this->params()->fromRoute('id');
         return new ViewModel();
     }
 }

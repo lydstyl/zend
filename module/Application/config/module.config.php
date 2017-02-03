@@ -35,12 +35,16 @@ return [
                 ],
             ],
             'team' => [//changement
-                'type' => Literal::class, //une histoire de paramètre ou pas --> segment pour les paramètres pas totalement vrai
+                'type' => Segment::class, //une histoire de paramètre ou pas --> segment pour les paramètres pas totalement vrai
                 'options' => [
-                    'route'    => '/team',//changement url
+                    'route'    => '/team[/:name]',//changement url
+                    'constraints' => [
+                        'name' => '[A-Za-z]+',
+                    ],
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'team', //changement
+                        'name'       => 'all',
                     ],
                 ],
             ],
@@ -74,6 +78,22 @@ return [
                     ],
                 ],
             ],
+            // url type segment (au lieu de litteral)
+            'album' => [//changement
+                'type' => Segment::class, //une histoire de paramètre ou pas --> segment pour les paramètres pas totalement vrai Segment::class peut etre remplacé par 'segment'
+                'options' => [
+                    'route'    => '/album[/:id]',//changement url
+                    'constraints' => [
+                        'id' => '[0-9]+',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action'     => 'album', //changement
+                        'id'         => 1,
+                    ],
+                ],
+            ],
+
             'application' => [
                 'type'    => Segment::class,
                 'options' => [

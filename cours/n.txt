@@ -15,3 +15,11 @@ dans vendor
 hauteur du slider
 img right left
 ecartement right left
+
+smart_box
+src
+name
+text
+
+
+
