@@ -3,15 +3,15 @@
         <h2>Welcome to Motion</h2>
         <p>Asmart & Creative Single Page Template</p>
         <div class="lydSlider">
-            <img src="../img/slider-left.png" alt="left">
+            <img src="<?= $this->basePath('img/slider-left.png') ?>" alt="left">
             <div class="container">
                 <div class="bar">            
                     <?php foreach ($url as $src) 
-                        echo "<div class='imgBox'><img src='".$src."' alt='slider_img'></div>"; 
+                        echo "<div class='imgBox'><img src='".$this->basePath($src)."' alt='slider_img'></div>"; 
                     ?>
                 </div>            
             </div>
-            <img src="../img/slider-right.png" alt="right">
+            <img src="<?= $this->basePath('img/slider-right.png') ?>" alt="right">
         </div>
     </div>
 </div>
@@ -26,7 +26,7 @@
                 foreach ($smart as $sm){
             ?>
                     <div class="col-sm-4">
-                        <div class="imgBox"><img src="<?= $sm['src'] ?>" alt="img"></div>
+                        <div class="imgBox"><img src="<?= $this->basePath($sm['src']) ?>" alt="img"></div>
                         <h4><?= $sm['name'] ?></h4>
                         <p><?= $sm['text'] ?> </p>                                           
                     </div>
@@ -45,14 +45,48 @@
                 foreach ($talented as $tal){
             ?>
                 <div class="col-sm-3">
-                    <imgBox><img src="<?= $tal['src'] ?>" alt="img"></imgBox>
+                    <imgBox><img src="<?= $this->basePath($tal['src']) ?>" alt="img"></imgBox>
                     <h4><span><?= $tal['first_name'] ?></span><span><?= $tal['last_name'] ?></span></h4>
                     <p><?= $tal['work'] ?></p>
                     <div class="follow">Follow</div>
-                </div
+                </div>
             <?php
                 } 
             ?>
+        </div>
+    </div>
+</div>
+<div class="slider">
+    <div class="wrapper">
+        <h2>Elegant</h2>
+        <p>Asmart & Creative Single Page Template</p>
+        <div class="lydSlider2">
+            <img src="<?= $this->basePath('img/slider-left2.png') ?>" alt="left">
+            <div class="container">
+                <div class="bar">            
+                    <?php foreach ($url as $src) 
+                        echo "<div class='imgBox'><img src='".$this->basePath($src)."' alt='slider_img'></div>"; 
+                    ?>
+                </div>            
+            </div>
+            <img src="<?= $this->basePath('img/slider-right2.png') ?>" alt="right">
+        </div>
+    </div>
+</div>
+<div class="slider">
+    <div class="wrapper">
+        <h2>Lastest</h2>
+        <p>Asmart & Creative Single Page Template</p>
+        <div class="lydSlider3">
+            <img src="<?= $this->basePath('img/slider-left3.png') ?>" alt="left">
+            <div class="container">
+                <div class="bar">            
+                    <?php foreach ($url as $src) 
+                        echo "<div class='imgBox'><img src='".$this->basePath($src)."' alt='slider_img'></div>"; 
+                    ?>
+                </div>            
+            </div>
+            <img src="<?= $this->basePath('img/slider-right3.png') ?>" alt="right">
         </div>
     </div>
 </div>
